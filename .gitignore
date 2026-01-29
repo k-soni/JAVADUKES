@@ -1,0 +1,44 @@
+# ======================
+# Java
+# ======================
+*.class
+*.log
+
+# ======================
+# Maven
+# ======================
+target/
+*.jar
+*.war
+*.ear
+dependency-reduced-pom.xml
+
+# ======================
+# IDEs
+# ======================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# ======================
+# OS
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Others
+# ======================
+*.tmp
+*.swp
