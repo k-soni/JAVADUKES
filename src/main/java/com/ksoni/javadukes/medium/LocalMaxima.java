@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class LocalMaxima {
     public static void main(final String[] args) {
-        LocalMaxima solution = new LocalMaxima();
-        solution.localMaxima(null)
     }
 
     public int localMaxima(ArrayList<Integer> A) {
