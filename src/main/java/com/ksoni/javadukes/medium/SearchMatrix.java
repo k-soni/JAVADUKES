@@ -10,9 +10,9 @@ public class SearchMatrix {
         list.add(new ArrayList<Integer>(Arrays.asList(4,5,6)));
         list.add(new ArrayList<Integer>(Arrays.asList(7,8,9)));
         System.out.println("list "+ list.size());
-        test solution = new test();
-        int res = solution.searchMatrix(list, 5);
-        System.out.println("ans "+ res);
+//        test solution = new test();
+//        int res = solution.searchMatrix(list, 5);
+//        System.out.println("ans "+ res);
     }
 
     public int searchMatrix(ArrayList<ArrayList<Integer>> A, int B) {
