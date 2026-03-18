@@ -6,33 +6,28 @@ import java.util.List;
 
 public class RainWaterTrap {
     public static void main(final String[] args) {
-        List<Integer> A = new ArrayList<>(Arrays.asList(9,3,2,4,6,2,1,8));
+        ArrayList<Integer> A = new ArrayList<>(Arrays.asList(1, 2, 3));
         RainWaterTrap rainWaterBF = new RainWaterTrap();
         int result = rainWaterBF.solution(A);
-        System.out.println("Trapped Water "+result);
     }
 
     public int solution(final List<Integer> A) {
         int trappedRainWater = 0;
+        int[] leftMax = new int[A.size()];
+        leftMax[0] = A.get(0);
+        for (int j = 1; j < A.size(); j++) {
+            leftMax[j] = Math.max(leftMax[j-1], A.get(j));
+        }
+
+        int[] rightMax = new int[A.size()];
+        rightMax[A.size() - 1] = A.get(A.size() - 1);
+
+        for (int z = A.size() - 2; z >= 0; z--) {
+            rightMax[z] = Math.max(rightMax[z+1], A.get(z));
+        }
+
         for (int i = 1; i < A.size()-1; i++) {
-            int leftMax = -1;
-            // get left side max bar
-            for (int j = i-1; j >= 0 ; j--) {
-                int currentElement = A.get(j);
-                if(currentElement > leftMax) {
-                    leftMax = currentElement;
-                }
-            }
-
-            int rightMax = -1;
-            for (int z = i+1; z < A.size(); z++) {
-                int currentElement = A.get(z);
-                if(currentElement > rightMax) {
-                    rightMax = currentElement;
-                }
-            }
-
-            int waterTrappedInCurrentBlock = Math.min(leftMax, rightMax) - A.get(i);
+            int waterTrappedInCurrentBlock = Math.min(leftMax[i-1], rightMax[i+1]) - A.get(i);
             if(waterTrappedInCurrentBlock > 0) {
                 trappedRainWater += waterTrappedInCurrentBlock;
             }
