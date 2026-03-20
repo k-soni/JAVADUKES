@@ -21,6 +21,7 @@ public class AggresiveCows {
         int ans = 0;
 
 
+
         while (mindistance < maxDistance) {
             int mid = mindistance + (maxDistance - mindistance)/2;
             boolean isPossible = findMaxMindistanceBetweenCows(stallLocations, mid, numberofCows);
