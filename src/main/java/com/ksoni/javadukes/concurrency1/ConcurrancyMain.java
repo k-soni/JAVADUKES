@@ -6,7 +6,8 @@ import java.util.concurrent.Executors;
 
 public class ConcurrancyMain {
     public static void main(final String[] args) {
-
+        Counter counter = new Counter(1);
+        counter.getValue();
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
         for (int i = 1; i <= 100 ; i++) {
