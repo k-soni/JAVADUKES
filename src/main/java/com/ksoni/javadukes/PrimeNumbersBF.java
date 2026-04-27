@@ -20,10 +20,7 @@ public class PrimeNumbersBF {
                 output[i] = i;
             }
         }
-
-
         return Arrays.stream(output).filter(num -> num != 0).toArray();
-
     }
 
 
