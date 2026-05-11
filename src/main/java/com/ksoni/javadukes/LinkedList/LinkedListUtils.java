@@ -46,4 +46,20 @@ public class LinkedListUtils {
 
         return head;
     }
+
+    public static ListNode middleNode(ListNode A) {
+        if(A == null) {
+            return  null;
+        }
+
+        ListNode sp = A;
+        ListNode fp = A;
+
+        while (fp.next != null && fp.next.next != null) {
+            sp = sp.next;
+            fp = fp.next.next;
+        }
+
+        return sp;
+    }
 }
