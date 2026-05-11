@@ -2,12 +2,9 @@ package com.ksoni.javadukes.LinkedList;
 
 import com.ksoni.javadukes.common.ListNode;
 
-public class MergedTwoSortedLinkedList {
-    public static void main(String[] args) {
+public class LinkedListUtils {
 
-    }
-
-    public ListNode mergeTwoLists(ListNode A, ListNode B) {
+    public static ListNode mergeTwoSortedLists(ListNode A, ListNode B) {
         if(A == null) {
             return B;
         }
@@ -16,17 +13,17 @@ public class MergedTwoSortedLinkedList {
             return A;
         }
 
-        ListNode ansList = null;
+        ListNode head = null;
 
         if(A.val <= B.val) {
-            ansList = A;
+            head = A;
             A = A.next;
         } else {
-            ansList = B;
+            head = B;
             B = B.next;
         }
 
-        ListNode temp = ansList;
+        ListNode temp = head;
 
         while (A != null && B != null) {
             if(A.val <= B.val) {
@@ -42,11 +39,11 @@ public class MergedTwoSortedLinkedList {
         if(A == null) {
             temp.next = B;
         }
+
         if(B == null) {
             temp.next = A;
         }
 
-        return ansList;
+        return head;
     }
-
 }

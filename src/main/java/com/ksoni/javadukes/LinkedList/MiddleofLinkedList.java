@@ -7,7 +7,7 @@ public class MiddleofLinkedList {
 
     }
 
-    public ListNode getMiddleNode(ListNode A) {
+    public static ListNode getMiddleNode(ListNode A) {
         if(A == null) {
             return A;
         }
