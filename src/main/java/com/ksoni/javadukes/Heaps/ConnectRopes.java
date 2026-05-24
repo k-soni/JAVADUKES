@@ -1,6 +1,7 @@
 package com.ksoni.javadukes.Heaps;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 
@@ -12,7 +13,6 @@ public class ConnectRopes {
 
     public int solve(ArrayList<Integer> A) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-
         for (int i = 0; i < A.size(); i++) {
             priorityQueue.add(A.get(i));
         }
