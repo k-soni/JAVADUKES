@@ -2,7 +2,9 @@ package com.ksoni.javadukes;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class LongestConsecutiveSequence {
     public static void main(String[] args) {
@@ -62,6 +64,34 @@ public class LongestConsecutiveSequence {
         }
         return false;
     }
+
+
+    public int solve(int[] A) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num: A) {
+            set.add(num);
+        }
+
+        int longest = 0;
+
+        for (int i = 0; i < A.length; i++) {
+
+            if (!set.contains(A[i] - 1)) {
+                int current = A[i];
+                int length = 1;
+
+                while (set.contains(A[i] + 1)) {
+                    current++;
+                    length++;
+                }
+                longest = Math.max(longest,length);
+            }
+        }
+
+        return longest;
+    }
+
 
 
 }
