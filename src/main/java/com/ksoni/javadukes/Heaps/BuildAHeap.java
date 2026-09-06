@@ -4,10 +4,14 @@ public class BuildAHeap {
 
     public static void main(String[] args) {
         BuildAHeap buildHeap = new BuildAHeap();
-        int[] ans = buildHeap.buildHeap(new int[]{10, 10, 8, 2, 9, 8, 7, 7, 10, 9});
-
+        int[] ans = buildHeap.buildHeap(new int[]{7,3,5,1,6,8,10,2,13,14,-2});
         for (int num: ans) {
-            System.out.println(num);
+            System.out.print(num + " ");
+        }
+        int[] result = buildHeap.extractMin(ans);
+        System.out.println();
+        for (int num: result) {
+            System.out.print(num + " ");
         }
     }
 
@@ -17,7 +21,7 @@ public class BuildAHeap {
         int nonleafnode = n/2 -1;
 
         for (int i = nonleafnode; i >= 0; i--) {
-            System.out.println(i);
+
             heapify(A,i);
         }
 
@@ -51,5 +55,20 @@ public class BuildAHeap {
         int temp = heap1[parentIndex];
         heap1[parentIndex] = heap1[index];
         heap1[index] = temp;
+    }
+
+    public int[] extractMin(int[] heap) {
+        swap(heap,0, heap.length - 1);
+        int[] latestHeap = deleteLastElementFromheap(heap);
+        heapify(latestHeap,0);
+        return latestHeap;
+    }
+
+    public int[] deleteLastElementFromheap(int[] heap) {
+        int[] heap2 = new int[heap.length - 1];
+        for (int i = 0; i < heap2.length; i++) {
+            heap2[i] = heap[i];
+        }
+        return heap2;
     }
 }
